@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  @apply max-w-[1440px] md:p-20 p-5;
+}
+a {
+  @apply hover:text-orange-500;
+}
+a.active {
+  @apply text-orange-500;
+}
+
+.sidebar-container {
+  @apply -right-96 transition-all ease-out duration-300 md:hidden;
+  box-shadow: -8px 0 15px -5px rgba(0, 0, 0, 0.3);
+}
+#sidebar-active:checked ~ .sidebar-container {
+  @apply right-0;
+}
+
+#sidebar-active:checked ~ #overlay {
+  @apply md:hidden backdrop-blur-sm bg-gray-100/10 fixed top-0 left-0 right-0 bottom-0;
+}
